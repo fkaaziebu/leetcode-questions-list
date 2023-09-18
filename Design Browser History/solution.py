@@ -11,11 +11,8 @@ class BrowserHistory:
     def visit(self, url: str) -> None:
         # Create a new node
         newNode = Node(value=url)
-        # Update the current node's next pointer to point to the new node
-        # and the new node's previous to the currentNode
         self.currentNode.next = newNode
         newNode.prev = self.currentNode
-        # Update the current node
         self.currentNode = newNode
         
     def back(self, steps: int) -> str:
